@@ -1,0 +1,8 @@
+{
+  "model": "tfidf_logistic_regression_baseline",
+  "trained_at_utc": "2026-07-16T18:37:57.307200+00:00",
+  "test_accuracy": 0.8492,
+  "test_precision_weighted": 0.8564,
+  "test_recall_weighted": 0.8492,
+  "test_f1_weighted": 0.8505
+}

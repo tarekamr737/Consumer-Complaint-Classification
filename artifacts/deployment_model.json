@@ -1,0 +1,7 @@
+{
+  "model_name": "tfidf_logistic_regression_baseline",
+  "artifact": "baseline_classifier.joblib",
+  "preprocessing": null,
+  "selection_metric": "f1_weighted",
+  "selection_score": 0.8374
+}

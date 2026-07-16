@@ -1,0 +1,6 @@
+product,credit_card,credit_reporting,debt_collection,mortgages_and_loans,retail_banking
+credit_card,[26 17  0 15 10]
+credit_reporting,[ 19 158   1  37   4]
+debt_collection,[ 8 42  1 28  7]
+mortgages_and_loans,[10 15  0 51  3]
+retail_banking,[13 20  0 16 11]

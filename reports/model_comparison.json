@@ -1,0 +1,36 @@
+{
+  "models": {
+    "tfidf_logistic_regression_baseline": {
+      "accuracy": 0.8359,
+      "precision_weighted": 0.8445,
+      "recall_weighted": 0.8359,
+      "f1_weighted": 0.8374
+    },
+    "simple_rnn": {
+      "accuracy": 0.7617,
+      "precision_weighted": 0.7746,
+      "recall_weighted": 0.7617,
+      "f1_weighted": 0.763
+    },
+    "lstm": {
+      "accuracy": 0.7324,
+      "precision_weighted": 0.7682,
+      "recall_weighted": 0.7324,
+      "f1_weighted": 0.7357
+    },
+    "gru": {
+      "accuracy": 0.8027,
+      "precision_weighted": 0.8127,
+      "recall_weighted": 0.8027,
+      "f1_weighted": 0.803
+    },
+    "distilbert": {
+      "accuracy": 0.4824,
+      "precision_weighted": 0.488,
+      "recall_weighted": 0.4824,
+      "f1_weighted": 0.4355
+    }
+  },
+  "selected_model": "tfidf_logistic_regression_baseline",
+  "test_samples": 512
+}

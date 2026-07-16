@@ -1,0 +1,163 @@
+{
+  "data_quality": {
+    "source_rows": 162421,
+    "kept_rows": 124676,
+    "dropped_null_rows": 10,
+    "dropped_duplicate_rows": 37735,
+    "text_source_column": "narrative",
+    "label_source_column": "product"
+  },
+  "eda": {
+    "class_distribution": {
+      "credit_reporting": 56303,
+      "debt_collection": 21117,
+      "mortgages_and_loans": 18759,
+      "credit_card": 15024,
+      "retail_banking": 13473
+    },
+    "class_count": 5,
+    "imbalance_ratio_max_to_min": 4.179,
+    "class_weighting_recommended": true,
+    "balanced_class_weights": {
+      "credit_card": 1.659691,
+      "credit_reporting": 0.442875,
+      "debt_collection": 1.180812,
+      "mortgages_and_loans": 1.329239,
+      "retail_banking": 1.850753
+    },
+    "complaint_length_words": {
+      "min": 1,
+      "max": 2685,
+      "mean": 87.12,
+      "median": 58
+    },
+    "top_30_words": [
+      [
+        "account",
+        252929
+      ],
+      [
+        "credit",
+        239624
+      ],
+      [
+        "report",
+        124293
+      ],
+      [
+        "payment",
+        118364
+      ],
+      [
+        "information",
+        104300
+      ],
+      [
+        "time",
+        73355
+      ],
+      [
+        "would",
+        72341
+      ],
+      [
+        "loan",
+        70670
+      ],
+      [
+        "company",
+        67883
+      ],
+      [
+        "card",
+        66770
+      ],
+      [
+        "bank",
+        65817
+      ],
+      [
+        "debt",
+        62534
+      ],
+      [
+        "reporting",
+        62510
+      ],
+      [
+        "day",
+        61029
+      ],
+      [
+        "received",
+        60299
+      ],
+      [
+        "letter",
+        56363
+      ],
+      [
+        "told",
+        53516
+      ],
+      [
+        "sent",
+        49850
+      ],
+      [
+        "never",
+        49402
+      ],
+      [
+        "call",
+        49077
+      ],
+      [
+        "called",
+        47571
+      ],
+      [
+        "dispute",
+        46428
+      ],
+      [
+        "number",
+        45013
+      ],
+      [
+        "also",
+        43641
+      ],
+      [
+        "due",
+        43082
+      ],
+      [
+        "balance",
+        42740
+      ],
+      [
+        "back",
+        42417
+      ],
+      [
+        "date",
+        41865
+      ],
+      [
+        "one",
+        41847
+      ],
+      [
+        "month",
+        41388
+      ]
+    ]
+  },
+  "split_sizes": {
+    "train": 87272,
+    "validation": 18702,
+    "test": 18702
+  },
+  "split_seed": 42
+}

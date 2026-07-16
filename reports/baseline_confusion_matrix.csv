@@ -1,0 +1,6 @@
+product,credit_card,credit_reporting,debt_collection,mortgages_and_loans,retail_banking
+credit_card,1926,78,57,35,158
+credit_reporting,382,6986,590,418,69
+debt_collection,92,299,2620,121,36
+mortgages_and_loans,48,129,87,2505,45
+retail_banking,115,12,20,29,1845
