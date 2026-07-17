@@ -34,3 +34,7 @@ $env:PYTHONPATH = 'src'
 ```
 
 The checked-in local experiment uses a one-epoch, 512-record DistilBERT smoke fine-tune because this workspace is CPU-only. Remove the sample caps for a full fine-tune. Model comparison, reports, confusion matrices, and the selected deployment descriptor are written to `reports/` and `artifacts/deployment_model.json`.
+
+## Deploy to Render
+
+The included `render.yaml` deploys the lightweight inference runtime rather than the full training stack. In Render, create a **Blueprint** from this repository, select the free web-service plan, and deploy. The free service sleeps after inactivity and its local classification history resets when the service restarts.

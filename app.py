@@ -4,6 +4,7 @@ from __future__ import annotations
 
 import html
 import json
+import os
 import sys
 from datetime import UTC, datetime
 from pathlib import Path
@@ -174,4 +175,7 @@ def build_app() -> gr.Blocks:
 
 
 if __name__ == "__main__":
-    build_app().launch()
+    build_app().launch(
+        server_name="0.0.0.0",
+        server_port=int(os.environ.get("PORT", "7860")),
+    )
