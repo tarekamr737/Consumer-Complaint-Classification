@@ -1,15 +1,3 @@
----
-title: Consumer Complaint Classification
-emoji: "🧭"
-colorFrom: blue
-colorTo: indigo
-sdk: gradio
-sdk_version: 5.5.0
-app_file: app.py
-pinned: false
-short_description: Explainable consumer-complaint routing recommendations.
----
-
 # Consumer Complaint Classification
 
 An internal decision-support application for routing consumer complaints. Analysts paste a complaint narrative, review the recommended category with confidence and alternative routes, then retain a local audit trail of recent classifications.
@@ -29,7 +17,7 @@ The interface is designed for operational use:
 
 ## Live application
 
-The application is deployed as a [Hugging Face Space](https://huggingface.co/spaces/Tarek737/Consumer-Complaint-Classification). You can also run it locally using the instructions below.
+The application is live at [consumer-complaint-classification-production.up.railway.app](https://consumer-complaint-classification-production.up.railway.app/). You can also run it locally using the instructions below.
 
 ## Selected model
 
@@ -87,7 +75,7 @@ scripts/                   Repeatable preparation, training, and evaluation comm
 artifacts/                 Deployment model and lightweight baseline artifact
 reports/                   Evaluation metrics and confusion matrices
 data/                      Source data and prepared train, validation, and test splits
-requirements.txt           Lightweight Hugging Face Space runtime dependencies
+requirements.txt           Lightweight Railway runtime dependencies
 requirements.training.txt  Full dependencies for experiment reproduction
 ```
 
@@ -142,20 +130,20 @@ python scripts\evaluate_models.py
 
 The DistilBERT command is intentionally bounded for a CPU-only smoke run. Train on the complete dataset with suitable compute before considering it for production use.
 
-## Deploy on Hugging Face Spaces
+## Deploy on Railway
 
-This repository is configured for the Gradio Space at [Tarek737/Consumer-Complaint-Classification](https://huggingface.co/spaces/Tarek737/Consumer-Complaint-Classification). The metadata block at the top of this file tells Spaces to launch `app.py` with Gradio 5.5.0, while `requirements.txt` supplies only the lightweight inference dependencies.
+The live deployment is hosted on [Railway](https://consumer-complaint-classification-production.up.railway.app/). Railway installs the lightweight runtime dependencies and starts the Gradio application with the following settings:
 
-To deploy an updated version:
-
-```powershell
-git remote add huggingface https://huggingface.co/spaces/Tarek737/Consumer-Complaint-Classification
-git push huggingface main
+```text
+Build command: pip install -r requirements.txt
+Start command: python app.py
 ```
 
-When Git asks for credentials, use your Hugging Face username and an access token with write permission as the password. Once the push completes, Spaces builds and starts the app automatically.
+The application reads Railway's `PORT` environment variable and binds to `0.0.0.0`, so no additional port configuration is required.
 
-The app uses CPU inference and does not require a GPU or the `spaces` package. Classification history is stored in the Space's local runtime and resets whenever the Space restarts or is rebuilt.
+To deploy updates, connect this GitHub repository to a Railway service and push changes to its configured deployment branch. Railway rebuilds the service automatically after each push.
+
+The app uses CPU inference and does not require a GPU. Classification history is stored in the deployment's local runtime and resets whenever the service restarts or is rebuilt.
 
 ## Artifact policy
 
