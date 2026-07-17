@@ -60,4 +60,3 @@
 - [x] Gradio app
 - [x] README
 - [x] requirements.txt
-- [ ] Deploy to Hugging Face Spaces
