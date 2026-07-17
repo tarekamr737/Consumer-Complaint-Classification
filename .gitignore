@@ -1,0 +1,23 @@
+# Python environments and bytecode
+.venv/
+__pycache__/
+**/__pycache__/
+*.py[cod]
+
+# Local application state and runtime logs
+artifacts/classification_history.json
+*.log
+
+# Generated training artifacts, checkpoints, and experiment state
+artifacts/distilbert/
+artifacts/*.keras
+artifacts/recurrent_preprocessor/
+checkpoints/
+
+# Local tooling
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.ipynb_checkpoints/
+.DS_Store
+Thumbs.db

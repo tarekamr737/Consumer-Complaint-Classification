@@ -24,6 +24,10 @@ $env:PYTHONPATH = 'src'
 
 The initial app uses a balanced TF-IDF + logistic-regression baseline so it is usable immediately. The repository also includes the recurrent-model preprocessing and training scaffold for the required SimpleRNN, LSTM, and GRU experiments.
 
+## Repository contents
+
+The lightweight `artifacts/baseline_classifier.joblib` inference model is versioned so the app runs after cloning or deploying to Render. Generated neural-network models, DistilBERT checkpoints, local classification history, and runtime logs are intentionally excluded from Git; reproduce them with the training commands below when needed.
+
 ## Model experiments
 
 ```powershell
