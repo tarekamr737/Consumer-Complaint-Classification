@@ -1,6 +1,0 @@
-# Lightweight inference dependencies for Render deployment.
-gradio==5.5.0
-huggingface-hub>=0.25,<1.0
-pandas==2.2.3
-scikit-learn==1.5.2
-joblib==1.4.2

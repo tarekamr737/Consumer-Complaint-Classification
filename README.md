@@ -1,3 +1,15 @@
+---
+title: Consumer Complaint Classification
+emoji: "🧭"
+colorFrom: blue
+colorTo: indigo
+sdk: gradio
+sdk_version: 5.5.0
+app_file: app.py
+pinned: false
+short_description: Explainable consumer-complaint routing recommendations.
+---
+
 # Consumer Complaint Classification
 
 An internal decision-support application for routing consumer complaints. Analysts paste a complaint narrative, review the recommended category with confidence and alternative routes, then retain a local audit trail of recent classifications.
@@ -17,7 +29,7 @@ The interface is designed for operational use:
 
 ## Live application
 
-Deploy the application with the included Render Blueprint, or run it locally using the instructions below.
+The application is deployed as a [Hugging Face Space](https://huggingface.co/spaces/Tarek737/Consumer-Complaint-Classification). You can also run it locally using the instructions below.
 
 ## Selected model
 
@@ -75,7 +87,8 @@ scripts/                   Repeatable preparation, training, and evaluation comm
 artifacts/                 Deployment model and lightweight baseline artifact
 reports/                   Evaluation metrics and confusion matrices
 data/                      Source data and prepared train, validation, and test splits
-render.yaml                Render Blueprint configuration
+requirements.txt           Lightweight Hugging Face Space runtime dependencies
+requirements.training.txt  Full dependencies for experiment reproduction
 ```
 
 ## Run locally
@@ -95,7 +108,7 @@ python -m venv .venv
 ### 2. Install the runtime dependencies
 
 ```powershell
-pip install -r requirements.runtime.txt
+pip install -r requirements.txt
 ```
 
 ### 3. Start the app
@@ -113,7 +126,7 @@ Open the local URL shown in the terminal, normally `http://127.0.0.1:7860`.
 Install the full experiment dependencies first:
 
 ```powershell
-pip install -r requirements.txt
+pip install -r requirements.training.txt
 $env:PYTHONPATH = 'src'
 ```
 
@@ -129,16 +142,20 @@ python scripts\evaluate_models.py
 
 The DistilBERT command is intentionally bounded for a CPU-only smoke run. Train on the complete dataset with suitable compute before considering it for production use.
 
-## Deploy on Render
+## Deploy on Hugging Face Spaces
 
-[`render.yaml`](render.yaml) defines a lightweight web service that installs only the inference dependencies and runs `app.py`.
+This repository is configured for the Gradio Space at [Tarek737/Consumer-Complaint-Classification](https://huggingface.co/spaces/Tarek737/Consumer-Complaint-Classification). The metadata block at the top of this file tells Spaces to launch `app.py` with Gradio 5.5.0, while `requirements.txt` supplies only the lightweight inference dependencies.
 
-1. Push this repository to GitHub.
-2. In Render, choose **New** then **Blueprint**.
-3. Connect this repository and approve the detected `render.yaml` configuration.
-4. Deploy the service.
+To deploy an updated version:
 
-The free Render plan may sleep after inactivity. Classification history is stored locally by the app and resets whenever the service restarts or is redeployed.
+```powershell
+git remote add huggingface https://huggingface.co/spaces/Tarek737/Consumer-Complaint-Classification
+git push huggingface main
+```
+
+When Git asks for credentials, use your Hugging Face username and an access token with write permission as the password. Once the push completes, Spaces builds and starts the app automatically.
+
+The app uses CPU inference and does not require a GPU or the `spaces` package. Classification history is stored in the Space's local runtime and resets whenever the Space restarts or is rebuilt.
 
 ## Artifact policy
 
