@@ -1,5 +1,10 @@
 # Consumer Complaint Classification
 
+<img width="1920" height="1080" alt="Screenshot 2026-07-17 193713" src="https://github.com/user-attachments/assets/9eba8fec-4261-4fbf-8c2c-bd361b42d64a" />
+
+<img width="1920" height="1080" alt="Screenshot 2026-07-17 193722" src="https://github.com/user-attachments/assets/0eac8b0b-6f3a-40bc-a675-1f28e9d846d2" />
+
+
 An internal decision-support application for routing consumer complaints. Analysts paste a complaint narrative, review the recommended category with confidence and alternative routes, then retain a local audit trail of recent classifications.
 
 Built with Gradio, scikit-learn, and a TF-IDF plus logistic-regression classifier.
